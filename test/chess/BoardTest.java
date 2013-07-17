@@ -1,3 +1,6 @@
+package chess;
+import chess.Board;
+import chess.Pawn;
 import junit.framework.TestCase;
 
 public class BoardTest extends TestCase {

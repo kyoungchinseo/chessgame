@@ -1,3 +1,5 @@
+package chess;
+import chess.Pawn;
 import junit.framework.TestCase;
 
 

@@ -1,3 +1,4 @@
+package chess;
 
 /**
  * class for Chess Pieces
