@@ -7,6 +7,10 @@ class Pawn {
 		this.color = color;
 	}
 	
+	public Pawn() {
+		this.color = "white";
+	}
+
 	public String getColor() {
 		// TODO Auto-generated method stub
 		return color;
