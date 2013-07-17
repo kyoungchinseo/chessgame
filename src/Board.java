@@ -1,6 +1,12 @@
 import java.util.ArrayList;
 
-
+/**
+ * 
+ * class for chess board
+ * 
+ * @author kyoungchin seo
+ *
+ */
 class Board {
 	
 	private ArrayList<Pawn> pawns =  new ArrayList<Pawn>();
@@ -9,6 +15,11 @@ class Board {
 		
 	}
 
+	/**
+	 * insert each chesspiece(pawn)
+	 * @param pawn 
+	 * @return number of totally added pawn
+	 */
 	public int addPiece(Pawn pawn) {
 		pawns.add(pawn);
 		return pawns.size();

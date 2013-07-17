@@ -1,10 +1,30 @@
 
+/**
+ * class for Chess Pieces
+ * 
+ * @author kyoungchin seo
+ *
+ */
 class Pawn {
 
 	private String color;
 	
 	private final String WHITE = "white";
 	private final String BLACK = "black";
+
+	Pawn(String color) {
+		this.color = color;
+	}
+	
+	public Pawn() {
+		this.color = WHITE;
+	}
+
+	public String getColor() {
+		// TODO Auto-generated method stub
+		return color;
+	}
+	
 	
 	@Override
 	public int hashCode() {
@@ -29,21 +49,6 @@ class Pawn {
 		} else if (!color.equals(other.color))
 			return false;
 		return true;
-	}
-
-	Pawn(String color) {
-		this.color = color;
-	}
-	
-	public Pawn() {
-		this.color = WHITE;
-	}
-
-	public String getColor() {
-		// TODO Auto-generated method stub
-		return color;
-	}
-	
-	
+	}	
 
 }
