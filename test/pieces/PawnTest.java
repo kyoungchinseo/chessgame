@@ -4,17 +4,26 @@ import junit.framework.TestCase;
 
 
 public class PawnTest extends TestCase {
+	
+	private Pawn firstPawn;
+	private Pawn secondPawn;
+	
+	private String whiteColor = "white";
+	private String blackColor = "black";
+	
+	
+	public void setUp() {
+		firstPawn = new Pawn(whiteColor);
+		secondPawn = new Pawn(blackColor);
+	}
+	
+	
 	public void testCreate() throws Exception {
-		final String firstColor = "white";
-		final String secondColor = "black";
-		
-		Pawn firstPawn = new Pawn(firstColor);
 		String firstPawncolor = firstPawn.getColor();
-		assertEquals(firstColor, firstPawncolor);
+		assertEquals(whiteColor, firstPawncolor);
 		
-		Pawn secondPawn = new Pawn(secondColor);
 		String secondPawnColor = secondPawn.getColor();
-		assertEquals(secondColor, secondPawnColor);
+		assertEquals(blackColor, secondPawnColor);
 	}
 	
 	public void testPawn() throws Exception {
