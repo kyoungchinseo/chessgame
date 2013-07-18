@@ -1,7 +1,6 @@
 package chess;
-import chess.Board;
-import chess.Pawn;
 import junit.framework.TestCase;
+import pieces.Pawn;
 
 public class BoardTest extends TestCase {
 	public void testCreate() throws Exception {

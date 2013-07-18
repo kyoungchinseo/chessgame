@@ -1,4 +1,4 @@
-package chess;
+package pieces;
 
 /**
  * class for Chess Pieces
@@ -6,14 +6,14 @@ package chess;
  * @author kyoungchin seo
  *
  */
-class Pawn {
+public class Pawn {
 
 	private String color;
 	
 	private final String WHITE = "white";
 	private final String BLACK = "black";
 
-	Pawn(String color) {
+	public Pawn(String color) {
 		this.color = color;
 	}
 	

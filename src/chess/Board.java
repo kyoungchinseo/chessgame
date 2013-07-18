@@ -1,6 +1,8 @@
 package chess;
 import java.util.ArrayList;
 
+import pieces.Pawn;
+
 /**
  * 
  * class for chess board
