@@ -12,5 +12,6 @@ public class BoardTest extends TestCase {
 		assertEquals(new Pawn("white"), board.getPawn(0));
 		assertEquals(new Pawn("black"), board.getPawn(1));
 		
+		assertEquals(3, board.addPiece(new Integer("7")));
 	}	
 }
