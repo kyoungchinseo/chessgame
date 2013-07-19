@@ -25,6 +25,12 @@ public class BoardTest extends TestCase {
 		assertEquals("P",board.getLabel(1));
 		
 		//assertEquals(3, board.addPiece(new Integer("7")));
+		
+		
+		board.initialize();
+		assertEquals("PPPPPPPP", board.getRowLabels(1));
+		assertEquals("pppppppp", board.getRowLabels(6));
+		
 	}	
 	
 }
