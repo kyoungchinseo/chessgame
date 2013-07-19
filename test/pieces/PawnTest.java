@@ -8,8 +8,8 @@ public class PawnTest extends TestCase {
 	private Pawn firstPawn;
 	private Pawn secondPawn;
 	
-	private final String whiteColor = "white";
-	private final String blackColor = "black";
+	private final String whiteColor = Pawn.WHITE;
+	private final String blackColor = Pawn.BLACK;
 	
 	
 	public void setUp() {

@@ -31,7 +31,14 @@ public class BoardTest extends TestCase {
 		assertEquals("PPPPPPPP", board.getRowLabels(6));
 		assertEquals("pppppppp", board.getRowLabels(1));
 	
-		assertEquals("........\nPPPPPPPP\n........\n........\n........\n........\npppppppp\n........\n",board.getBoard());
+		assertEquals("........"+Board.NEWLINE
+				    +"PPPPPPPP"+Board.NEWLINE
+				    +"........"+Board.NEWLINE
+				    +"........"+Board.NEWLINE
+				    +"........"+Board.NEWLINE
+				    +"........"+Board.NEWLINE
+				    +"pppppppp"+Board.NEWLINE
+				    +"........"+Board.NEWLINE,board.getBoard());
 		
 		board.displayBoard(); // display board
 	}	

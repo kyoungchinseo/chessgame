@@ -16,6 +16,7 @@ class Board {
 	private ArrayList<Pawn> pawns =  new ArrayList<Pawn>();
 	private ArrayList<ArrayList<Pawn>> chessBoard  = new ArrayList<ArrayList<Pawn>>();
 	
+	static final String NEWLINE = System.getProperty("line.separator");
 	
 	Board () {
 		
@@ -80,7 +81,7 @@ class Board {
 		StringBuilder boardMap = new StringBuilder();
 		for(int i=0;i<8;i++) {
 			boardMap.append(getRowLabels(7-i));
-			boardMap.append("\n");
+			boardMap.append(NEWLINE);
 		}
 		return boardMap.toString();
 	}
@@ -89,7 +90,7 @@ class Board {
 		StringBuilder boardMap = new StringBuilder();
 		for(int i=0;i<8;i++) {
 			boardMap.append(getRowLabels(7-i));
-			boardMap.append("\n");
+			boardMap.append(NEWLINE);
 		}
 		System.out.println(boardMap.toString());
 	}
