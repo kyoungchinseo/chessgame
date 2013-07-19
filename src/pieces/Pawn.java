@@ -9,12 +9,14 @@ package pieces;
 public class Pawn {
 
 	private String color;
+	private String label; // "P" for black, "p" for white
 	
 	private final String WHITE = "white";
 	private final String BLACK = "black";
 
-	public Pawn(String color) {
+	public Pawn(String color, String label) {
 		this.color = color;
+		this.label = label;
 	}
 	
 	public Pawn() {
@@ -25,6 +27,10 @@ public class Pawn {
 		// TODO Auto-generated method stub
 		return color;
 	}
+	
+	public String getLabel() {
+		return label;
+	}	
 	
 	
 	@Override
@@ -50,6 +56,8 @@ public class Pawn {
 		} else if (!color.equals(other.color))
 			return false;
 		return true;
-	}	
+	}
+
+	
 
 }

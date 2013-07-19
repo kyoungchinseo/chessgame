@@ -8,13 +8,13 @@ public class PawnTest extends TestCase {
 	private Pawn firstPawn;
 	private Pawn secondPawn;
 	
-	private String whiteColor = "white";
-	private String blackColor = "black";
+	private final String whiteColor = "white";
+	private final String blackColor = "black";
 	
 	
 	public void setUp() {
-		firstPawn = new Pawn(whiteColor);
-		secondPawn = new Pawn(blackColor);
+		firstPawn = new Pawn(whiteColor,"p");
+		secondPawn = new Pawn(blackColor,"P");
 	}
 	
 	

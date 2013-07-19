@@ -31,4 +31,8 @@ class Board {
 	public Pawn getPawn(int index) {
 		return pawns.get(index);
 	}
+
+	public String getLabel(int index) {
+		return pawns.get(index).getLabel();
+	}
 }
