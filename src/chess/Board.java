@@ -1,8 +1,14 @@
 package chess;
 
 import java.util.ArrayList;
-
 import pieces.Pawn;
+
+import static pieces.Pawn.WHITE;
+import static pieces.Pawn.BLACK;
+import static pieces.Pawn.EMPTY;
+import static pieces.Pawn.whitePawnLabel;
+import static pieces.Pawn.blackPawnLabel;
+import static pieces.Pawn.emptyLabel;
 
 /**
  * 
@@ -16,7 +22,7 @@ class Board {
 	private ArrayList<Pawn> pawns =  new ArrayList<Pawn>();
 	private ArrayList<ArrayList<Pawn>> chessBoard  = new ArrayList<ArrayList<Pawn>>();
 	
-	static final String NEWLINE = System.getProperty("line.separator");
+	public static final String NEWLINE = System.getProperty("line.separator");
 	
 	Board () {
 		
@@ -51,17 +57,17 @@ class Board {
 			case 5:
 			case 7:
 				for(int i=0;i<8;i++) {
-					p.add(new Pawn("empty","."));
+					p.add(new Pawn(EMPTY,emptyLabel));
 				}
 				break;
 			case 1:
 				for(int i=0;i<8;i++) {
-					p.add(new Pawn("white","p"));
+					p.add(new Pawn(WHITE,whitePawnLabel));
 				}
 				break;
 			case 6:
 				for(int i=0;i<8;i++) {
-					p.add(new Pawn("black","P"));
+					p.add(new Pawn(BLACK,blackPawnLabel));
 				}
 				break;
 			}

@@ -2,6 +2,8 @@ package chess;
 import junit.framework.TestCase;
 import pieces.Pawn;
 
+import static chess.Board.NEWLINE;
+
 public class BoardTest extends TestCase {
 	
 	private Board board;
@@ -31,14 +33,14 @@ public class BoardTest extends TestCase {
 		assertEquals("PPPPPPPP", board.getRowLabels(6));
 		assertEquals("pppppppp", board.getRowLabels(1));
 	
-		assertEquals("........"+Board.NEWLINE
-				    +"PPPPPPPP"+Board.NEWLINE
-				    +"........"+Board.NEWLINE
-				    +"........"+Board.NEWLINE
-				    +"........"+Board.NEWLINE
-				    +"........"+Board.NEWLINE
-				    +"pppppppp"+Board.NEWLINE
-				    +"........"+Board.NEWLINE,board.getBoard());
+		assertEquals("........"+NEWLINE
+				    +"PPPPPPPP"+NEWLINE
+				    +"........"+NEWLINE
+				    +"........"+NEWLINE
+				    +"........"+NEWLINE
+				    +"........"+NEWLINE
+				    +"pppppppp"+NEWLINE
+				    +"........"+NEWLINE,board.getBoard());
 		
 		board.displayBoard(); // display board
 	}	

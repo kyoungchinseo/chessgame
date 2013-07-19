@@ -11,8 +11,15 @@ public class Pawn {
 	private String color;
 	private String label; // "P" for black, "p" for white
 	
-	static final String WHITE = "white";
-	static final String BLACK = "black";
+	public static final String WHITE = "white";
+	public static final String BLACK = "black";
+	
+	public static final String whitePawnLabel = "p";
+	public static final String blackPawnLabel = "P";
+	
+	public static final String EMPTY = "";
+	public static final String emptyLabel = ".";
+	
 
 	public Pawn(String color, String label) {
 		this.color = color;
