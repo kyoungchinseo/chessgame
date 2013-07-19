@@ -1,5 +1,4 @@
 package chess;
-import junit.framework.AssertionFailedError;
 import junit.framework.TestCase;
 import pieces.Pawn;
 
