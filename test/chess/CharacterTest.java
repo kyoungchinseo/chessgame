@@ -8,4 +8,14 @@ public class CharacterTest extends TestCase {
 		assertEquals(true, Character.isWhitespace('\n'));
 		assertEquals(true, Character.isWhitespace(' '));
 	}
+	
+	public void testIdentifier() throws Exception {
+		assertEquals(false, Character.isJavaIdentifierPart('^'));
+		assertEquals(false, Character.isJavaIdentifierPart(' '));
+		assertEquals(true, Character.isJavaIdentifierPart('a'));
+		
+		assertEquals(true, Character.isJavaIdentifierStart('a'));
+		assertEquals(false, Character.isJavaIdentifierStart('1'));
+	}
 }
+
