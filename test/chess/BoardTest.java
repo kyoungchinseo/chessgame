@@ -33,6 +33,7 @@ public class BoardTest extends TestCase {
 	
 		assertEquals("........\nPPPPPPPP\n........\n........\n........\n........\npppppppp\n........\n",board.getBoard());
 		
+		board.displayBoard(); // display board
 	}	
 	
 }

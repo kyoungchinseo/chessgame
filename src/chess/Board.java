@@ -82,8 +82,16 @@ class Board {
 			boardMap.append(getRowLabels(7-i));
 			boardMap.append("\n");
 		}
-		System.out.println(boardMap.toString());
 		return boardMap.toString();
+	}
+	
+	public void displayBoard() {
+		StringBuilder boardMap = new StringBuilder();
+		for(int i=0;i<8;i++) {
+			boardMap.append(getRowLabels(7-i));
+			boardMap.append("\n");
+		}
+		System.out.println(boardMap.toString());
 	}
 	
 	
