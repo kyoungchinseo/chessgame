@@ -15,7 +15,7 @@ public class Pawn {
 	public static final String COLOR_BLACK = "black";
 	
 	public static final String SYMBOL_WHITE = "p";
-	public static final String SYMBOL_BLACK = "P";
+	public static final String SYMBOL_BLACK = "p".toUpperCase();
 	
 	public static final String COLOR_EMPTY = "";
 	public static final String SYMBOL_EMPTY = ".";
