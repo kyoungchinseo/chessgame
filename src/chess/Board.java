@@ -77,12 +77,13 @@ class Board {
 	}
 
 	public String getBoard() {
-		String boardLabel = "";
+		StringBuilder boardMap = new StringBuilder();
 		for(int i=0;i<8;i++) {
-			boardLabel = boardLabel + getRowLabels(7-i) + "\n"; 
+			boardMap.append(getRowLabels(7-i));
+			boardMap.append("\n");
 		}
-		System.out.println(boardLabel);
-		return boardLabel;
+		System.out.println(boardMap.toString());
+		return boardMap.toString();
 	}
 	
 	
