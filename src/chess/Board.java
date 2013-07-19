@@ -2,6 +2,7 @@ package chess;
 
 import java.util.ArrayList;
 import pieces.Pawn;
+import pieces.Row;
 
 import static pieces.Pawn.COLOR_WHITE;
 import static pieces.Pawn.COLOR_BLACK;
@@ -20,7 +21,7 @@ import static pieces.Pawn.SYMBOL_EMPTY;
 class Board {
 	
 	private ArrayList<Pawn> pawns =  new ArrayList<Pawn>();
-	private ArrayList<ArrayList<Pawn>> chessBoard  = new ArrayList<ArrayList<Pawn>>();
+	private ArrayList<Row> chessBoard  = new ArrayList<Row>();
 	
 	public static final String NEWLINE = System.getProperty("line.separator");
 	
@@ -48,45 +49,28 @@ class Board {
 	
 	public void initialize() {	
 		for(int row=0;row<8;row++) {
-			ArrayList<Pawn> p = new ArrayList<Pawn>();
 			switch(row) {
-			case 0:
-			case 2:
-			case 3:
-			case 4:
-			case 5:
-			case 7:
-				for(int i=0;i<8;i++) {
-					p.add(new Pawn(COLOR_EMPTY,SYMBOL_EMPTY));
-				}
-				break;
 			case 1:
-				for(int i=0;i<8;i++) {
-					p.add(new Pawn(COLOR_WHITE,SYMBOL_WHITE));
-				}
+				chessBoard.add(new Row(COLOR_WHITE,SYMBOL_WHITE));
 				break;
 			case 6:
-				for(int i=0;i<8;i++) {
-					p.add(new Pawn(COLOR_BLACK,SYMBOL_BLACK));
-				}
+				chessBoard.add(new Row(COLOR_BLACK,SYMBOL_BLACK));
+				break;
+			default:
+				chessBoard.add(new Row(COLOR_EMPTY,SYMBOL_EMPTY));
 				break;
 			}
-			chessBoard.add(p);
 		}
 	}
 	
-	public String getRowLabels(int index) {
-		StringBuilder rowLabel = new StringBuilder();
-		for(int i=0;i<8;i++) {
-			rowLabel.append(chessBoard.get(index).get(i).getLabel());
-		}
-		return rowLabel.toString();
+	public String getRowSymbols(int index) {
+		return chessBoard.get(index).getRow();
 	}
 
 	public String getBoard() {
 		StringBuilder boardMap = new StringBuilder();
 		for(int i=0;i<8;i++) {
-			boardMap.append(getRowLabels(7-i));
+			boardMap.append(getRowSymbols(7-i));
 			boardMap.append(NEWLINE);
 		}
 		return boardMap.toString();
@@ -95,11 +79,9 @@ class Board {
 	public void displayBoard() {
 		StringBuilder boardMap = new StringBuilder();
 		for(int i=0;i<8;i++) {
-			boardMap.append(getRowLabels(7-i));
+			boardMap.append(getRowSymbols(7-i));
 			boardMap.append(NEWLINE);
 		}
 		System.out.println(boardMap.toString());
 	}
-	
-	
 }

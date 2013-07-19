@@ -4,6 +4,8 @@ import junit.framework.TestCase;
 
 import static pieces.Pawn.COLOR_BLACK;
 import static pieces.Pawn.COLOR_WHITE;
+import static pieces.Pawn.SYMBOL_BLACK;
+import static pieces.Pawn.SYMBOL_WHITE;
 
 public class PawnTest extends TestCase {
 	
@@ -15,8 +17,8 @@ public class PawnTest extends TestCase {
 	
 	
 	public void setUp() {
-		firstPawn = new Pawn(whiteColor,"p");
-		secondPawn = new Pawn(blackColor,"P");
+		firstPawn = new Pawn(whiteColor,SYMBOL_WHITE);
+		secondPawn = new Pawn(blackColor,SYMBOL_BLACK);
 	}
 	
 	
