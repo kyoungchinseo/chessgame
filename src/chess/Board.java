@@ -55,12 +55,12 @@ class Board {
 				break;
 			case 1:
 				for(int i=0;i<8;i++) {
-					p.add(new Pawn("black","P"));
+					p.add(new Pawn("white","p"));
 				}
 				break;
 			case 6:
 				for(int i=0;i<8;i++) {
-					p.add(new Pawn("white","p"));
+					p.add(new Pawn("black","P"));
 				}
 				break;
 			}
@@ -74,6 +74,15 @@ class Board {
 			rowLabel.append(chessBoard.get(index).get(i).getLabel());
 		}
 		return rowLabel.toString();
+	}
+
+	public String getBoard() {
+		String boardLabel = "";
+		for(int i=0;i<8;i++) {
+			boardLabel = boardLabel + getRowLabels(7-i) + "\n"; 
+		}
+		System.out.println(boardLabel);
+		return boardLabel;
 	}
 	
 	

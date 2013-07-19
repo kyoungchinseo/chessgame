@@ -28,8 +28,10 @@ public class BoardTest extends TestCase {
 		
 		
 		board.initialize();
-		assertEquals("PPPPPPPP", board.getRowLabels(1));
-		assertEquals("pppppppp", board.getRowLabels(6));
+		assertEquals("PPPPPPPP", board.getRowLabels(6));
+		assertEquals("pppppppp", board.getRowLabels(1));
+	
+		assertEquals("........\nPPPPPPPP\n........\n........\n........\n........\npppppppp\n........\n",board.getBoard());
 		
 	}	
 	
