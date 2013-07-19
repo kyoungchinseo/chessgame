@@ -2,16 +2,16 @@ package pieces;
 //import pieces.Pawn;
 import junit.framework.TestCase;
 
-import static pieces.Pawn.BLACK;
-import static pieces.Pawn.WHITE;
+import static pieces.Pawn.COLOR_BLACK;
+import static pieces.Pawn.COLOR_WHITE;
 
 public class PawnTest extends TestCase {
 	
 	private Pawn firstPawn;
 	private Pawn secondPawn;
 	
-	private final String whiteColor = WHITE;
-	private final String blackColor = BLACK;
+	private final String whiteColor = COLOR_WHITE;
+	private final String blackColor = COLOR_BLACK;
 	
 	
 	public void setUp() {
@@ -30,6 +30,6 @@ public class PawnTest extends TestCase {
 	
 	public void testPawn() throws Exception {
 		Pawn pawn = new Pawn();
-		assertEquals(WHITE, pawn.getColor());
+		assertEquals(COLOR_WHITE, pawn.getColor());
 	}
 }

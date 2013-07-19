@@ -11,14 +11,14 @@ public class Pawn {
 	private String color;
 	private String label; // "P" for black, "p" for white
 	
-	public static final String WHITE = "white";
-	public static final String BLACK = "black";
+	public static final String COLOR_WHITE = "white";
+	public static final String COLOR_BLACK = "black";
 	
-	public static final String whitePawnLabel = "p";
-	public static final String blackPawnLabel = "P";
+	public static final String SYMBOL_WHITE = "p";
+	public static final String SYMBOL_BLACK = "P";
 	
-	public static final String EMPTY = "";
-	public static final String emptyLabel = ".";
+	public static final String COLOR_EMPTY = "";
+	public static final String SYMBOL_EMPTY = ".";
 	
 
 	public Pawn(String color, String label) {
@@ -27,7 +27,7 @@ public class Pawn {
 	}
 	
 	public Pawn() {
-		this.color = WHITE;
+		this.color = COLOR_WHITE;
 	}
 
 	public String getColor() {

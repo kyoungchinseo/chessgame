@@ -3,12 +3,12 @@ package chess;
 import java.util.ArrayList;
 import pieces.Pawn;
 
-import static pieces.Pawn.WHITE;
-import static pieces.Pawn.BLACK;
-import static pieces.Pawn.EMPTY;
-import static pieces.Pawn.whitePawnLabel;
-import static pieces.Pawn.blackPawnLabel;
-import static pieces.Pawn.emptyLabel;
+import static pieces.Pawn.COLOR_WHITE;
+import static pieces.Pawn.COLOR_BLACK;
+import static pieces.Pawn.COLOR_EMPTY;
+import static pieces.Pawn.SYMBOL_WHITE;
+import static pieces.Pawn.SYMBOL_BLACK;
+import static pieces.Pawn.SYMBOL_EMPTY;
 
 /**
  * 
@@ -57,17 +57,17 @@ class Board {
 			case 5:
 			case 7:
 				for(int i=0;i<8;i++) {
-					p.add(new Pawn(EMPTY,emptyLabel));
+					p.add(new Pawn(COLOR_EMPTY,SYMBOL_EMPTY));
 				}
 				break;
 			case 1:
 				for(int i=0;i<8;i++) {
-					p.add(new Pawn(WHITE,whitePawnLabel));
+					p.add(new Pawn(COLOR_WHITE,SYMBOL_WHITE));
 				}
 				break;
 			case 6:
 				for(int i=0;i<8;i++) {
-					p.add(new Pawn(BLACK,blackPawnLabel));
+					p.add(new Pawn(COLOR_BLACK,SYMBOL_BLACK));
 				}
 				break;
 			}
