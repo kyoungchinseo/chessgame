@@ -37,9 +37,7 @@ public class BoardTest extends TestCase {
 		assertEquals(SYMBOL_EMPTY,board.getSymbol(2));
 		
 		//assertEquals(3, board.addPiece(new Integer("7")));
-		
-		board.initialize();
-		
+				
 		// test row by row
 		StringBuilder rowWhitePawns = new StringBuilder();
 		StringBuilder rowBlackPawns = new StringBuilder();
