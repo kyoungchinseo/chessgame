@@ -21,11 +21,19 @@ public class PieceTest extends TestCase {
 		assertEquals(NAME_BISHOP, piece.getName());
 		assertEquals(SYMBOL_WHITE_BISHOP, piece.getLabel());
 		
+		assertEquals(true, piece.isWhite());
+		
 		piece = Piece.create(COLOR_BLACK, NAME_BISHOP);
 		assertEquals(COLOR_BLACK, piece.getColor()); 
 		assertEquals(NAME_BISHOP, piece.getName());
 		assertEquals(SYMBOL_BLACK_BISHOP, piece.getLabel());
+	
+		assertEquals(true, piece.isBlack());
+		
+		
 		
 	}
+	
+	
 	
 }

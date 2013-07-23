@@ -109,6 +109,24 @@ public class Piece {
 		return name;
 	}
 	
+	public boolean isWhite() {
+		if (color == COLOR_WHITE) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+	
+	public boolean isBlack() {
+		if (color == COLOR_BLACK) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+	
+
+	
 	@Override
 	public int hashCode() {
 		final int prime = 31;
