@@ -2,6 +2,8 @@ package chess;
 
 import java.util.ArrayList;
 
+import static util.StringUtil.NEWLINE;
+
 import pieces.Row;
 import static pieces.Pawn.COLOR_WHITE;
 import static pieces.Pawn.COLOR_BLACK;
@@ -20,8 +22,6 @@ import static pieces.Pawn.SYMBOL_EMPTY;
 class Board {
 	
 	private ArrayList<Row> chessBoard  = new ArrayList<Row>();
-	
-	public static final String NEWLINE = System.getProperty("line.separator");
 	
 	private int numOfPawns = 0;
 	

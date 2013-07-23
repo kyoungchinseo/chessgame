@@ -1,7 +1,8 @@
 package chess;
 import junit.framework.TestCase;
 
-import static chess.Board.NEWLINE;
+
+import static util.StringUtil.NEWLINE;
 import static pieces.Pawn.SYMBOL_BLACK;
 import static pieces.Pawn.SYMBOL_WHITE;
 import static pieces.Pawn.SYMBOL_EMPTY;
