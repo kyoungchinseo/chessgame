@@ -6,7 +6,7 @@ package pieces;
  * @author kyoungchin seo
  *
  */
-public class Pawn {
+public class Piece {
 
 	private String color;
 	private String symbol; // "P" for black, "p" for white
@@ -21,12 +21,12 @@ public class Pawn {
 	public static final String SYMBOL_EMPTY = ".";
 	
 
-	public Pawn(String color, String label) {
+	public Piece(String color, String label) {
 		this.color = color;
 		this.symbol = label;
 	}
 	
-	public Pawn() {
+	public Piece() {
 		this.color = COLOR_WHITE;
 	}
 
@@ -56,7 +56,7 @@ public class Pawn {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Pawn other = (Pawn) obj;
+		Piece other = (Piece) obj;
 		if (color == null) {
 			if (other.color != null)
 				return false;

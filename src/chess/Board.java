@@ -5,12 +5,12 @@ import java.util.ArrayList;
 import static util.StringUtil.NEWLINE;
 
 import pieces.Row;
-import static pieces.Pawn.COLOR_WHITE;
-import static pieces.Pawn.COLOR_BLACK;
-import static pieces.Pawn.COLOR_EMPTY;
-import static pieces.Pawn.SYMBOL_WHITE;
-import static pieces.Pawn.SYMBOL_BLACK;
-import static pieces.Pawn.SYMBOL_EMPTY;
+import static pieces.Piece.COLOR_WHITE;
+import static pieces.Piece.COLOR_BLACK;
+import static pieces.Piece.COLOR_EMPTY;
+import static pieces.Piece.SYMBOL_WHITE;
+import static pieces.Piece.SYMBOL_BLACK;
+import static pieces.Piece.SYMBOL_EMPTY;
 
 /**
  * 

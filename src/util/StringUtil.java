@@ -4,7 +4,7 @@ public class StringUtil {
 	
 	public static final String NEWLINE = System.getProperty("line.separator");
 	
-	StringUtil() {
+	private StringUtil() {
 		
 	}
 }

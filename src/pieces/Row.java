@@ -1,18 +1,18 @@
 package pieces;
 
 import java.util.ArrayList;
-import pieces.Pawn;
-import static pieces.Pawn.COLOR_BLACK;
-import static pieces.Pawn.COLOR_WHITE;
+import pieces.Piece;
+import static pieces.Piece.COLOR_BLACK;
+import static pieces.Piece.COLOR_WHITE;
 
 public class Row {
-	private ArrayList<Pawn> rowPawns = new ArrayList<Pawn>(); 
+	private ArrayList<Piece> rowPawns = new ArrayList<Piece>(); 
 	
 	private int numOfPawns = 0;
 	
 	public Row(String color, String symbol) {		
 		for(int i=0;i<8;i++) {
-			rowPawns.add(new Pawn(color,symbol));
+			rowPawns.add(new Piece(color,symbol));
 			if (color == COLOR_BLACK || color == COLOR_WHITE) {
 				numOfPawns++;
 			}

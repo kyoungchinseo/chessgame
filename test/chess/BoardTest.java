@@ -3,9 +3,9 @@ import junit.framework.TestCase;
 
 
 import static util.StringUtil.NEWLINE;
-import static pieces.Pawn.SYMBOL_BLACK;
-import static pieces.Pawn.SYMBOL_WHITE;
-import static pieces.Pawn.SYMBOL_EMPTY;
+import static pieces.Piece.SYMBOL_BLACK;
+import static pieces.Piece.SYMBOL_WHITE;
+import static pieces.Piece.SYMBOL_EMPTY;
 
 public class BoardTest extends TestCase {
 	
