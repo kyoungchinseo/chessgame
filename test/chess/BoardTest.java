@@ -32,9 +32,9 @@ public class BoardTest extends TestCase {
 		/**
 		 * P for black pawn, p for white pawn
 		 */
-		assertEquals(SYMBOL_WHITE,board.getLabel(0));
-		assertEquals(SYMBOL_BLACK,board.getLabel(1));
-		assertEquals(SYMBOL_EMPTY,board.getLabel(2));
+		assertEquals(SYMBOL_WHITE,board.getSymbol(0));
+		assertEquals(SYMBOL_BLACK,board.getSymbol(1));
+		assertEquals(SYMBOL_EMPTY,board.getSymbol(2));
 		
 		//assertEquals(3, board.addPiece(new Integer("7")));
 		

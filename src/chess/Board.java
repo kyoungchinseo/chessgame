@@ -43,7 +43,7 @@ class Board {
 		return pawns.get(index);
 	}
 
-	public String getLabel(int index) {
+	public String getSymbol(int index) {
 		return pawns.get(index).getLabel();
 	}
 	
