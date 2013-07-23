@@ -4,26 +4,63 @@ import java.util.ArrayList;
 import pieces.Piece;
 import static pieces.Piece.COLOR_BLACK;
 import static pieces.Piece.COLOR_WHITE;
+import static pieces.Piece.COLOR_EMPTY;
+import static pieces.Piece.NAME_EMPTY;
+import static pieces.Piece.NAME_BISHOP;
+import static pieces.Piece.NAME_KING;
+import static pieces.Piece.NAME_KNIGHT;
+import static pieces.Piece.NAME_PAWN;
+import static pieces.Piece.NAME_QUEEN;
+import static pieces.Piece.NAME_ROOK;
+
+import static chess.Board.FRONT_LINE;
+import static chess.Board.BACK_LINE;
 
 public class Row {
-	private ArrayList<Piece> rowPawns = new ArrayList<Piece>(); 
+	private ArrayList<Piece> rowPieces = new ArrayList<Piece>(); 
 	
 	private int numOfPawns = 0;
 	
-	public Row(String color, String symbol) {		
-		for(int i=0;i<8;i++) {
-			rowPawns.add(new Piece(color,symbol));
-			if (color == COLOR_BLACK || color == COLOR_WHITE) {
+	public Row(String color, int lineChoice) {
+		
+		String [] piece_list = {NAME_ROOK,NAME_KNIGHT,NAME_BISHOP,NAME_QUEEN,
+							 	NAME_KING,NAME_BISHOP,NAME_KNIGHT,NAME_ROOK};
+		
+		
+		if (color == COLOR_EMPTY) {
+			for(int i=0;i<8;i++) {
+				Piece piece = Piece.create(color,NAME_EMPTY);
+				rowPieces.add(piece);
+			}
+		} else if (color == COLOR_WHITE){			
+			for(int i=0;i<8;i++) {
+				Piece piece = null;
+				if (lineChoice == BACK_LINE) {
+					piece = Piece.create(COLOR_WHITE, piece_list[i]);
+				} else if (lineChoice == FRONT_LINE) {
+					piece = Piece.create(COLOR_WHITE, NAME_PAWN);
+				}
+				rowPieces.add(piece);
 				numOfPawns++;
 			}
-			
+		} else {
+			for(int i=0;i<8;i++) {
+				Piece piece = null;
+				if (lineChoice == BACK_LINE) {
+					piece = Piece.create(COLOR_BLACK, piece_list[i]);
+				} else if (lineChoice == FRONT_LINE) {
+					piece = Piece.create(COLOR_BLACK, NAME_PAWN);
+				}
+				rowPieces.add(piece);
+				numOfPawns++;
+			}
 		}
 	}
 	
 	public String getRow() {
 		StringBuilder sb = new StringBuilder();
-		for(int i=0;i<rowPawns.size();i++) {
-			sb.append(rowPawns.get(i).getLabel());
+		for(int i=0;i<rowPieces.size();i++) {
+			sb.append(rowPieces.get(i).getLabel());
 		}
 		return sb.toString();
 	}

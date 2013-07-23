@@ -7,4 +7,8 @@ public class StringUtil {
 	private StringUtil() {
 		
 	}
+
+	public static String appendNewLine(String string) {
+		return string + NEWLINE;
+	}
 }

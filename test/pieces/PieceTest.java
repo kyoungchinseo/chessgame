@@ -4,34 +4,28 @@ import junit.framework.TestCase;
 
 import static pieces.Piece.COLOR_BLACK;
 import static pieces.Piece.COLOR_WHITE;
-import static pieces.Piece.SYMBOL_BLACK;
-import static pieces.Piece.SYMBOL_WHITE;
+
+import static pieces.Piece.NAME_BISHOP;
+import static pieces.Piece.SYMBOL_BLACK_BISHOP;
+import static pieces.Piece.SYMBOL_WHITE_BISHOP;
+
 
 public class PieceTest extends TestCase {
 	
-	private Piece firstPawn;
-	private Piece secondPawn;
-	
-	private final String whiteColor = COLOR_WHITE;
-	private final String blackColor = COLOR_BLACK;
-	
-	
-	public void setUp() {
-		firstPawn = new Piece(whiteColor,SYMBOL_WHITE);
-		secondPawn = new Piece(blackColor,SYMBOL_BLACK);
-	}
-	
+	private Piece piece;
 	
 	public void testCreate() throws Exception {
-		String firstPawncolor = firstPawn.getColor();
-		assertEquals(whiteColor, firstPawncolor);
 		
-		String secondPawnColor = secondPawn.getColor();
-		assertEquals(blackColor, secondPawnColor);
+		piece = Piece.create(COLOR_WHITE, NAME_BISHOP);
+		assertEquals(COLOR_WHITE, piece.getColor()); 
+		assertEquals(NAME_BISHOP, piece.getName());
+		assertEquals(SYMBOL_WHITE_BISHOP, piece.getLabel());
+		
+		piece = Piece.create(COLOR_BLACK, NAME_BISHOP);
+		assertEquals(COLOR_BLACK, piece.getColor()); 
+		assertEquals(NAME_BISHOP, piece.getName());
+		assertEquals(SYMBOL_BLACK_BISHOP, piece.getLabel());
+		
 	}
 	
-	public void testPawn() throws Exception {
-		Piece pawn = new Piece();
-		assertEquals(COLOR_WHITE, pawn.getColor());
-	}
 }

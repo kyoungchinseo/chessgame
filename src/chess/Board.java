@@ -8,9 +8,6 @@ import pieces.Row;
 import static pieces.Piece.COLOR_WHITE;
 import static pieces.Piece.COLOR_BLACK;
 import static pieces.Piece.COLOR_EMPTY;
-import static pieces.Piece.SYMBOL_WHITE;
-import static pieces.Piece.SYMBOL_BLACK;
-import static pieces.Piece.SYMBOL_EMPTY;
 
 /**
  * 
@@ -19,11 +16,15 @@ import static pieces.Piece.SYMBOL_EMPTY;
  * @author kyoungchin seo
  *
  */
-class Board {
+public class Board {
 	
 	private ArrayList<Row> chessBoard  = new ArrayList<Row>();
 	
 	private int numOfPawns = 0;
+	
+	public static final int FRONT_LINE = 1;
+	public static final int BACK_LINE = 2;
+	public static final int EMPTY_LINE = 0;
 	
 	Board () {
 		
@@ -32,14 +33,20 @@ class Board {
 	public void initialize() {	
 		for(int row=0;row<8;row++) {
 			switch(row) {
+			case 0:
+				chessBoard.add(new Row(COLOR_WHITE,BACK_LINE));
+				break;
 			case 1:
-				chessBoard.add(new Row(COLOR_WHITE,SYMBOL_WHITE));
+				chessBoard.add(new Row(COLOR_WHITE,FRONT_LINE));
 				break;
 			case 6:
-				chessBoard.add(new Row(COLOR_BLACK,SYMBOL_BLACK));
+				chessBoard.add(new Row(COLOR_BLACK,FRONT_LINE));
+				break;
+			case 7:
+				chessBoard.add(new Row(COLOR_BLACK,BACK_LINE));
 				break;
 			default:
-				chessBoard.add(new Row(COLOR_EMPTY,SYMBOL_EMPTY));
+				chessBoard.add(new Row(COLOR_EMPTY,EMPTY_LINE));
 				break;
 			}
 			// calculate total number of pawns in chessboard
@@ -51,7 +58,7 @@ class Board {
 		return chessBoard.get(index).getRow();
 	}
 
-	public String getBoard() {
+	public String print() {
 		StringBuilder boardMap = new StringBuilder();
 		for(int i=0;i<8;i++) {
 			boardMap.append(getRowSymbols(7-i));
@@ -69,8 +76,7 @@ class Board {
 		System.out.println(boardMap.toString());
 	}
 
-	public int getNumOfPawns() {
-		
+	public int pieceCount() {	
 		return numOfPawns;
 	}
 }
