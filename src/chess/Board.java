@@ -1,9 +1,8 @@
 package chess;
 
 import java.util.ArrayList;
-import pieces.Pawn;
-import pieces.Row;
 
+import pieces.Row;
 import static pieces.Pawn.COLOR_WHITE;
 import static pieces.Pawn.COLOR_BLACK;
 import static pieces.Pawn.COLOR_EMPTY;
@@ -20,33 +19,16 @@ import static pieces.Pawn.SYMBOL_EMPTY;
  */
 class Board {
 	
-	private ArrayList<Pawn> pawns =  new ArrayList<Pawn>();
 	private ArrayList<Row> chessBoard  = new ArrayList<Row>();
 	
 	public static final String NEWLINE = System.getProperty("line.separator");
 	
+	private int numOfPawns = 0;
+	
 	Board () {
-		initialize();
+		
 	}
 
-	/**
-	 * insert each chesspiece(pawn)
-	 * @param pawn 
-	 * @return number of totally added pawn
-	 */
-	public int addPiece(Pawn pawn) {
-		pawns.add(pawn);
-		return pawns.size();
-	}
-	
-	public Pawn getPawn(int index) {
-		return pawns.get(index);
-	}
-
-	public String getSymbol(int index) {
-		return pawns.get(index).getLabel();
-	}
-	
 	public void initialize() {	
 		for(int row=0;row<8;row++) {
 			switch(row) {
@@ -60,6 +42,8 @@ class Board {
 				chessBoard.add(new Row(COLOR_EMPTY,SYMBOL_EMPTY));
 				break;
 			}
+			// calculate total number of pawns in chessboard
+			this.numOfPawns += chessBoard.get(row).getNumOfPawns(); 
 		}
 	}
 	
@@ -83,5 +67,10 @@ class Board {
 			boardMap.append(NEWLINE);
 		}
 		System.out.println(boardMap.toString());
+	}
+
+	public int getNumOfPawns() {
+		
+		return numOfPawns;
 	}
 }

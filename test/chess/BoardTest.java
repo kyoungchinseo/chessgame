@@ -1,11 +1,7 @@
 package chess;
 import junit.framework.TestCase;
-import pieces.Pawn;
 
 import static chess.Board.NEWLINE;
-import static pieces.Pawn.COLOR_BLACK;
-import static pieces.Pawn.COLOR_WHITE;
-import static pieces.Pawn.COLOR_EMPTY;
 import static pieces.Pawn.SYMBOL_BLACK;
 import static pieces.Pawn.SYMBOL_WHITE;
 import static pieces.Pawn.SYMBOL_EMPTY;
@@ -19,22 +15,10 @@ public class BoardTest extends TestCase {
 	}
 	
 	public void testCreate() throws Exception {
-		assertEquals(1, board.addPiece(new Pawn(COLOR_WHITE,SYMBOL_WHITE)));
-		assertEquals(2, board.addPiece(new Pawn(COLOR_BLACK,SYMBOL_BLACK)));
-		assertEquals(3, board.addPiece(new Pawn(COLOR_EMPTY,SYMBOL_EMPTY)));
+		// test generated number of pawns inside the board
+		board.initialize();
+		assertEquals(16,board.getNumOfPawns());
 		
-		
-		assertEquals(new Pawn(COLOR_WHITE,SYMBOL_WHITE), board.getPawn(0));
-		assertEquals(new Pawn(COLOR_BLACK,SYMBOL_BLACK), board.getPawn(1));
-		assertEquals(new Pawn(COLOR_EMPTY,SYMBOL_EMPTY), board.getPawn(2));
-		
-		
-		/**
-		 * P for black pawn, p for white pawn
-		 */
-		assertEquals(SYMBOL_WHITE,board.getSymbol(0));
-		assertEquals(SYMBOL_BLACK,board.getSymbol(1));
-		assertEquals(SYMBOL_EMPTY,board.getSymbol(2));
 		
 		//assertEquals(3, board.addPiece(new Integer("7")));
 				
