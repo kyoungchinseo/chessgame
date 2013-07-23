@@ -9,7 +9,7 @@ package pieces;
 public class Pawn {
 
 	private String color;
-	private String label; // "P" for black, "p" for white
+	private String symbol; // "P" for black, "p" for white
 	
 	public static final String COLOR_WHITE = "white";
 	public static final String COLOR_BLACK = "black";
@@ -23,7 +23,7 @@ public class Pawn {
 
 	public Pawn(String color, String label) {
 		this.color = color;
-		this.label = label;
+		this.symbol = label;
 	}
 	
 	public Pawn() {
@@ -36,7 +36,7 @@ public class Pawn {
 	}
 	
 	public String getLabel() {
-		return label;
+		return symbol;
 	}	
 	
 	
