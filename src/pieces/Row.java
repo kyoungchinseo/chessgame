@@ -61,4 +61,16 @@ public class Row {
 		return numOfPawns;
 	}
 
+	public int getNumOfPieces(COLOR c, Type t) {
+		int rowNum = 0;
+		for(int i =0;i<rowPieces.size();i++) {
+			if (rowPieces.get(i).getColor() == c) {
+				if (rowPieces.get(i).getType() == t) {
+					rowNum++;
+				}
+			}
+		}
+		return rowNum;
+	}
+
 }

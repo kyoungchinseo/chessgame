@@ -127,6 +127,10 @@ public class Piece {
 		return Character.toString(representation);
 	}	
 	
+	public COLOR getColor() {
+		return color;
+	}
+	
 	public boolean isWhite() {
 		if (color == WHITE) {
 			return true;
@@ -176,7 +180,7 @@ public class Piece {
 		return true;
 	}
 
-
+	
 	
 
 }

@@ -1,6 +1,8 @@
 package chess;
 import junit.framework.TestCase;
 
+import static pieces.COLOR.*;
+import static pieces.Piece.Type.*;
 
 import util.StringUtil;
 
@@ -30,5 +32,15 @@ public class BoardTest extends TestCase {
 		board.displayBoard(); // display board
 		
 	}	
+	
+	public void testGetMethods() throws Exception {
+		board.initialize();
+		assertEquals(32,board.pieceCount());
+		
+		
+		assertEquals(8, board.getNumOfPieces(WHITE,PAWN));
+		assertEquals(2, board.getNumOfPieces(BLACK,ROOK));
+		assertEquals(1, board.getNumOfPieces(WHITE,KING));
+	}
 	
 }

@@ -3,8 +3,9 @@ package chess;
 import java.util.ArrayList;
 
 import static util.StringUtil.NEWLINE;
+import pieces.COLOR;
+import pieces.Piece.Type;
 import pieces.Row;
-
 import static pieces.COLOR.*;
 
 /**
@@ -76,5 +77,13 @@ public class Board {
 
 	public int pieceCount() {	
 		return numOfPawns;
+	}
+
+	public int getNumOfPieces(COLOR c, Type t) {
+		int total = 0;
+		for(int i=0;i<8;i++) {
+			total += chessBoard.get(i).getNumOfPieces(c,t);
+		}
+		return total;
 	}
 }
