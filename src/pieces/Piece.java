@@ -1,5 +1,7 @@
 package pieces;
 
+import static pieces.COLOR.*;
+import static pieces.Piece.Type.*;
 
 
 /**
@@ -10,14 +12,31 @@ package pieces;
  */
 public class Piece {
 
+	public enum Type {
+		NOPIECE("BLANK"),ROOK("ROOK"),KNIGHT("KNIGHT"),BISHOP("BISHOP"),QUEEN("QUEEN"),KING("KING"), PAWN("PAWN");
+		
+		String name;
+		
+		Type(String name) {
+			this.name = name;
+		}
+		
+		String getName() {
+			return name;
+		}
+	}
+
 	private String color;
 	private String name;
 	private String symbol; // "P" for black, "p" for white
 	
-	public static final String COLOR_WHITE = COLOR.WHITE.getColor();
-	public static final String COLOR_BLACK = COLOR.BLACK.getColor();
+	private char representation;
+	private Type type;
 	
-	public static final String COLOR_EMPTY = COLOR.EMPTY.getColor();
+	public static final String COLOR_WHITE = WHITE.getColor();
+	public static final String COLOR_BLACK = BLACK.getColor();
+	
+	public static final String COLOR_EMPTY = EMPTY.getColor();
 	
 	public static final String SYMBOL_EMPTY = ".";
 	public static final String NAME_EMPTY = "empty";
@@ -35,13 +54,19 @@ public class Piece {
 	public static final String SYMBOL_WHITE_KING = "k";
 	public static final String SYMBOL_BLACK_KING = "k".toUpperCase();
 
-	public static final String NAME_PAWN = "pawn";
-	public static final String NAME_KNIGHT = "knight";
-	public static final String NAME_ROOK = "rook";
-	public static final String NAME_BISHOP = "bishop";
-	public static final String NAME_QUEEN = "queen";
-	public static final String NAME_KING = "king";
-
+	public static final String NAME_PAWN = PAWN.getName();
+	public static final String NAME_KNIGHT = KNIGHT.getName();
+	public static final String NAME_ROOK = ROOK.getName();
+	public static final String NAME_BISHOP = BISHOP.getName();
+	public static final String NAME_QUEEN = QUEEN.getName();
+	public static final String NAME_KING = KING.getName();
+	
+	public static final char PAWN_REPRESENTATION = 'p';
+	public static final char KNIGHT_REPRESENTATION = 'n';
+	public static final char ROOK_REPRESENTATION = 'r';
+	public static final char BISHOP_REPRESENTATION = 'b';
+	public static final char QUEEN_REPRESENTATION = 'q';
+	public static final char KING_REPRESENTATION = 'k';
 
 	private Piece(COLOR color, String name) {
 		this.color = color.getColor();
@@ -52,43 +77,44 @@ public class Piece {
 	private Piece(COLOR color, Type type) {
 		this.color = color.getColor();
 		this.name = type.getName();
+		this.type = type;
 		this.symbol = getSymbol(this.color,this.name);
 	}
 	
 	private String getSymbol(String color, String name) {
 		String result;
-		if (name == Type.PAWN.getName()) {
-			if (color == COLOR.WHITE.getColor()) {
+		if (name == PAWN.getName()) {
+			if (color == WHITE.getColor()) {
 				result = SYMBOL_WHITE_PAWN;
 			} else {
 				result = SYMBOL_BLACK_PAWN;
 			}
-		} else if (name == Type.KNIGHT.getName()) {
-			if (color == COLOR.WHITE.getColor()) {
+		} else if (name == KNIGHT.getName()) {
+			if (color == WHITE.getColor()) {
 				result = SYMBOL_WHITE_KNIGHT;
 			} else {
 				result = SYMBOL_BLACK_KNIGHT;
 			}
-		} else if (name == Type.ROOK.getName()) {
-			if (color == COLOR.WHITE.getColor()) {
+		} else if (name == ROOK.getName()) {
+			if (color == WHITE.getColor()) {
 				result = SYMBOL_WHITE_ROOK;
 			} else {
 				result = SYMBOL_BLACK_ROOK;
 			}
-		} else if (name == Type.BISHOP.getName()) {
-			if (color == COLOR.WHITE.getColor()) {
+		} else if (name == BISHOP.getName()) {
+			if (color == WHITE.getColor()) {
 				result = SYMBOL_WHITE_BISHOP;
 			} else {
 				result = SYMBOL_BLACK_BISHOP;
 			}
-		} else if (name == Type.QUEEN.getName()) {
-			if (color == COLOR.WHITE.getColor()) {
+		} else if (name == QUEEN.getName()) {
+			if (color == WHITE.getColor()) {
 				result = SYMBOL_WHITE_QUEEN;
 			} else {
 				result = SYMBOL_BLACK_QUEEN;
 			}
-		} else if (name == Type.KING.getName()) {
-			if (color == COLOR.WHITE.getColor()) {
+		} else if (name == KING.getName()) {
+			if (color == WHITE.getColor()) {
 				result = SYMBOL_WHITE_KING;
 			} else {
 				result = SYMBOL_BLACK_KING;
@@ -96,6 +122,7 @@ public class Piece {
 		} else {
 			result = SYMBOL_EMPTY;
 		}
+		representation = result.charAt(0);
 		return result;
 	}
 	
@@ -104,8 +131,55 @@ public class Piece {
 		return new Piece(color, name);
 	}
 	
+	public static Piece createWhitePawn() {
+		return new Piece(WHITE,PAWN);
+	}
+
+	public static Piece createBlackPawn() {
+		return new Piece(BLACK,PAWN);
+	}
+	
+	public static Piece createWhiteRook() {
+		return new Piece(WHITE,ROOK);
+	}
+	
+	public static Piece createBlackRook() {
+		return new Piece(BLACK,ROOK);
+	}
+	
+	public static Piece createWhiteKnight() {
+		return new Piece(WHITE,KNIGHT);
+	}
+	
+	public static Piece createBlackKnight() {
+		return new Piece(BLACK,KNIGHT);
+	}
+	
+	public static Piece createWhiteBishop() {
+		return new Piece(WHITE,BISHOP);
+	}
+	
+	public static Piece createBlackBishop() {
+		return new Piece(BLACK,BISHOP);
+	}
+	
+	public static Piece createWhiteQueen() {
+		return new Piece(WHITE,QUEEN);
+	}
+	
+	public static Piece createBlackQueen() {
+		return new Piece(BLACK,QUEEN);
+	}
+	
+	public static Piece createWhiteKing() {
+		return new Piece(WHITE,KING);
+	}
+	
+	public static Piece createBlackKing() {
+		return new Piece(BLACK,KING);
+	}
+	
 	public String getColor() {
-		// TODO Auto-generated method stub
 		return color;
 	}
 	
@@ -118,7 +192,7 @@ public class Piece {
 	}
 	
 	public boolean isWhite() {
-		if (color == COLOR_WHITE) {
+		if (color == WHITE.getColor()) {
 			return true;
 		} else {
 			return false;
@@ -126,13 +200,21 @@ public class Piece {
 	}
 	
 	public boolean isBlack() {
-		if (color == COLOR_BLACK) {
+		if (color == BLACK.getColor()) {
 			return true;
 		} else {
 			return false;
 		}
 	}
 	
+	public Type getType() {
+		return type;
+	}
+
+	public char getRepresentation() {
+		return representation;
+	}
+
 
 	
 	@Override
@@ -159,6 +241,7 @@ public class Piece {
 			return false;
 		return true;
 	}
+
 
 	
 

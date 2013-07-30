@@ -2,8 +2,6 @@ package pieces;
 //import pieces.Pawn;
 import junit.framework.TestCase;
 
-import static pieces.Piece.COLOR_BLACK;
-import static pieces.Piece.COLOR_WHITE;
 
 import static pieces.Piece.NAME_BISHOP;
 import static pieces.Piece.SYMBOL_BLACK_BISHOP;
@@ -12,26 +10,35 @@ import static pieces.Piece.SYMBOL_WHITE_BISHOP;
 
 public class PieceTest extends TestCase {
 	
-	private Piece piece;
-	
 	public void testCreate() throws Exception {
+		verifyCreation(Piece.createWhitePawn(), Piece.createBlackPawn(),
+				Piece.Type.PAWN, Piece.PAWN_REPRESENTATION);
+
+		verifyCreation(Piece.createWhiteKnight(),Piece.createBlackKnight(),
+				Piece.Type.KNIGHT,Piece.KNIGHT_REPRESENTATION);
 		
-		piece = Piece.create(COLOR.WHITE, Type.BISHOP.getName());
-		assertEquals(COLOR.WHITE.getColor(), piece.getColor()); 
-		assertEquals(Type.BISHOP.getName(), piece.getName());
-		assertEquals(SYMBOL_WHITE_BISHOP, piece.getLabel());
+		verifyCreation(Piece.createWhiteRook(),Piece.createBlackRook(),
+				Piece.Type.ROOK,Piece.ROOK_REPRESENTATION);
 		
-		assertEquals(true, piece.isWhite());
+		verifyCreation(Piece.createWhiteBishop(),Piece.createBlackBishop(),
+				Piece.Type.BISHOP,Piece.BISHOP_REPRESENTATION);
 		
-		piece = Piece.create(COLOR.BLACK, Type.BISHOP.getName());
-		assertEquals(COLOR.BLACK.getColor(), piece.getColor()); 
-		assertEquals(Type.BISHOP.getName(), piece.getName());
-		assertEquals(SYMBOL_BLACK_BISHOP, piece.getLabel());
-	
-		assertEquals(true, piece.isBlack());
+		verifyCreation(Piece.createWhiteQueen(),Piece.createBlackQueen(),
+				Piece.Type.QUEEN,Piece.QUEEN_REPRESENTATION);
+		
+		verifyCreation(Piece.createWhiteKing(),Piece.createBlackKing(),
+				Piece.Type.KING,Piece.KING_REPRESENTATION);
 		
 	}
 	
+	private void verifyCreation(Piece whitePiece, Piece blackPiece, Piece.Type type, char representation) {
+		assertTrue(whitePiece.isWhite());
+		assertEquals(type, whitePiece.getType());
+		assertEquals(representation, whitePiece.getRepresentation());
+		assertTrue(blackPiece.isBlack());
+		assertEquals(type, blackPiece.getType());
+		assertEquals(Character.toUpperCase(representation), blackPiece.getRepresentation());
+	}
 	
 	
 }

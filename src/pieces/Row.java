@@ -1,7 +1,13 @@
 package pieces;
 
 import java.util.ArrayList;
+
 import pieces.Piece;
+
+import static pieces.COLOR.*;
+import static pieces.Piece.Type.*;
+
+
 import static pieces.Piece.COLOR_BLACK;
 import static pieces.Piece.COLOR_WHITE;
 import static pieces.Piece.COLOR_EMPTY;
@@ -27,18 +33,18 @@ public class Row {
 							 	NAME_KING,NAME_BISHOP,NAME_KNIGHT,NAME_ROOK};
 		
 		
-		if (color == COLOR.EMPTY) {
+		if (color == EMPTY) {
 			for(int i=0;i<8;i++) {
-				Piece piece = Piece.create(color,NAME_EMPTY);
+				Piece piece = Piece.create(color,NOPIECE.getName());
 				rowPieces.add(piece);
 			}
-		} else if (color == COLOR.WHITE){			
+		} else if (color == WHITE){			
 			for(int i=0;i<8;i++) {
 				Piece piece = null;
 				if (lineChoice == BACK_LINE) {
-					piece = Piece.create(COLOR.WHITE, piece_list[i]);
+					piece = Piece.create(WHITE, piece_list[i]);
 				} else if (lineChoice == FRONT_LINE) {
-					piece = Piece.create(COLOR.WHITE, Type.PAWN.getName());
+					piece = Piece.create(WHITE, PAWN.getName());
 				}
 				rowPieces.add(piece);
 				numOfPawns++;
@@ -47,9 +53,9 @@ public class Row {
 			for(int i=0;i<8;i++) {
 				Piece piece = null;
 				if (lineChoice == BACK_LINE) {
-					piece = Piece.create(COLOR.BLACK, piece_list[i]);
+					piece = Piece.create(BLACK, piece_list[i]);
 				} else if (lineChoice == FRONT_LINE) {
-					piece = Piece.create(COLOR.BLACK, Type.PAWN.getName());
+					piece = Piece.create(BLACK, PAWN.getName());
 				}
 				rowPieces.add(piece);
 				numOfPawns++;

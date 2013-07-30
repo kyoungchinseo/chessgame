@@ -9,6 +9,9 @@ import static pieces.Piece.COLOR_WHITE;
 import static pieces.Piece.COLOR_BLACK;
 import static pieces.Piece.COLOR_EMPTY;
 
+import static pieces.COLOR.*;
+import static pieces.Piece.Type.*;
+
 /**
  * 
  * class for chess board
@@ -34,19 +37,19 @@ public class Board {
 		for(int row=0;row<8;row++) {
 			switch(row) {
 			case 0:
-				chessBoard.add(new Row(COLOR.WHITE,BACK_LINE));
+				chessBoard.add(new Row(WHITE,BACK_LINE));
 				break;
 			case 1:
-				chessBoard.add(new Row(COLOR.WHITE,FRONT_LINE));
+				chessBoard.add(new Row(WHITE,FRONT_LINE));
 				break;
 			case 6:
-				chessBoard.add(new Row(COLOR.BLACK,FRONT_LINE));
+				chessBoard.add(new Row(BLACK,FRONT_LINE));
 				break;
 			case 7:
-				chessBoard.add(new Row(COLOR.BLACK,BACK_LINE));
+				chessBoard.add(new Row(BLACK,BACK_LINE));
 				break;
 			default:
-				chessBoard.add(new Row(COLOR.EMPTY,EMPTY_LINE));
+				chessBoard.add(new Row(EMPTY,EMPTY_LINE));
 				break;
 			}
 			// calculate total number of pawns in chessboard
