@@ -104,53 +104,29 @@ public class Piece {
 		return new Piece(color, type);
 	}
 
-	
-	public static Piece createWhitePawn() {
-		return new Piece(WHITE,PAWN);
+
+	public static Piece createPawn(COLOR color) {
+		return new Piece(color,PAWN);
 	}
 
-	public static Piece createBlackPawn() {
-		return new Piece(BLACK,PAWN);
+	public static Piece createRook(COLOR color) {
+		return new Piece(color,ROOK);
+	}
+
+	public static Piece createKnight(COLOR color) {
+		return new Piece(color,KNIGHT);
 	}
 	
-	public static Piece createWhiteRook() {
-		return new Piece(WHITE,ROOK);
+	public static Piece createBishop(COLOR color) {
+		return new Piece(color,BISHOP);
+	}
+
+	public static Piece createQueen(COLOR color) {
+		return new Piece(color,QUEEN);
 	}
 	
-	public static Piece createBlackRook() {
-		return new Piece(BLACK,ROOK);
-	}
-	
-	public static Piece createWhiteKnight() {
-		return new Piece(WHITE,KNIGHT);
-	}
-	
-	public static Piece createBlackKnight() {
-		return new Piece(BLACK,KNIGHT);
-	}
-	
-	public static Piece createWhiteBishop() {
-		return new Piece(WHITE,BISHOP);
-	}
-	
-	public static Piece createBlackBishop() {
-		return new Piece(BLACK,BISHOP);
-	}
-	
-	public static Piece createWhiteQueen() {
-		return new Piece(WHITE,QUEEN);
-	}
-	
-	public static Piece createBlackQueen() {
-		return new Piece(BLACK,QUEEN);
-	}
-	
-	public static Piece createWhiteKing() {
-		return new Piece(WHITE,KING);
-	}
-	
-	public static Piece createBlackKing() {
-		return new Piece(BLACK,KING);
+	public static Piece createKing(COLOR color) {
+		return new Piece(color,KING);
 	}
 	
 	public String getLabel() {

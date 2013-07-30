@@ -2,27 +2,28 @@ package pieces;
 //import pieces.Pawn;
 import junit.framework.TestCase;
 
+import static pieces.COLOR.*;
 
 
 public class PieceTest extends TestCase {
 	
 	public void testCreate() throws Exception {
-		verifyCreation(Piece.createWhitePawn(), Piece.createBlackPawn(),
+		verifyCreation(Piece.createPawn(WHITE), Piece.createPawn(BLACK),
 				Piece.Type.PAWN, Piece.PAWN_REPRESENTATION);
 
-		verifyCreation(Piece.createWhiteKnight(),Piece.createBlackKnight(),
+		verifyCreation(Piece.createKnight(WHITE),Piece.createKnight(BLACK),
 				Piece.Type.KNIGHT,Piece.KNIGHT_REPRESENTATION);
 		
-		verifyCreation(Piece.createWhiteRook(),Piece.createBlackRook(),
+		verifyCreation(Piece.createRook(WHITE),Piece.createRook(BLACK),
 				Piece.Type.ROOK,Piece.ROOK_REPRESENTATION);
 		
-		verifyCreation(Piece.createWhiteBishop(),Piece.createBlackBishop(),
+		verifyCreation(Piece.createBishop(WHITE),Piece.createBishop(BLACK),
 				Piece.Type.BISHOP,Piece.BISHOP_REPRESENTATION);
 		
-		verifyCreation(Piece.createWhiteQueen(),Piece.createBlackQueen(),
+		verifyCreation(Piece.createQueen(WHITE),Piece.createQueen(BLACK),
 				Piece.Type.QUEEN,Piece.QUEEN_REPRESENTATION);
 		
-		verifyCreation(Piece.createWhiteKing(),Piece.createBlackKing(),
+		verifyCreation(Piece.createKing(WHITE),Piece.createKing(BLACK),
 				Piece.Type.KING,Piece.KING_REPRESENTATION);
 		
 	}
