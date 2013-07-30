@@ -3,10 +3,6 @@ package pieces;
 import junit.framework.TestCase;
 
 
-import static pieces.Piece.NAME_BISHOP;
-import static pieces.Piece.SYMBOL_BLACK_BISHOP;
-import static pieces.Piece.SYMBOL_WHITE_BISHOP;
-
 
 public class PieceTest extends TestCase {
 	

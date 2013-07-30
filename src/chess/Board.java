@@ -3,14 +3,9 @@ package chess;
 import java.util.ArrayList;
 
 import static util.StringUtil.NEWLINE;
-import pieces.COLOR;
 import pieces.Row;
-import static pieces.Piece.COLOR_WHITE;
-import static pieces.Piece.COLOR_BLACK;
-import static pieces.Piece.COLOR_EMPTY;
 
 import static pieces.COLOR.*;
-import static pieces.Piece.Type.*;
 
 /**
  * 

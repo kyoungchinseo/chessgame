@@ -3,21 +3,9 @@ package pieces;
 import java.util.ArrayList;
 
 import pieces.Piece;
-
+import pieces.Piece.Type;
 import static pieces.COLOR.*;
 import static pieces.Piece.Type.*;
-
-
-import static pieces.Piece.COLOR_BLACK;
-import static pieces.Piece.COLOR_WHITE;
-import static pieces.Piece.COLOR_EMPTY;
-import static pieces.Piece.NAME_EMPTY;
-import static pieces.Piece.NAME_BISHOP;
-import static pieces.Piece.NAME_KING;
-import static pieces.Piece.NAME_KNIGHT;
-import static pieces.Piece.NAME_PAWN;
-import static pieces.Piece.NAME_QUEEN;
-import static pieces.Piece.NAME_ROOK;
 
 import static chess.Board.FRONT_LINE;
 import static chess.Board.BACK_LINE;
@@ -29,22 +17,20 @@ public class Row {
 	
 	public Row(COLOR color, int lineChoice) {
 		
-		String [] piece_list = {NAME_ROOK,NAME_KNIGHT,NAME_BISHOP,NAME_QUEEN,
-							 	NAME_KING,NAME_BISHOP,NAME_KNIGHT,NAME_ROOK};
-		
+		Type [] type_list = {ROOK,KNIGHT,BISHOP,QUEEN,KING,BISHOP,KNIGHT,ROOK};
 		
 		if (color == EMPTY) {
 			for(int i=0;i<8;i++) {
-				Piece piece = Piece.create(color,NOPIECE.getName());
+				Piece piece = Piece.create(color,NOPIECE);
 				rowPieces.add(piece);
 			}
 		} else if (color == WHITE){			
 			for(int i=0;i<8;i++) {
 				Piece piece = null;
 				if (lineChoice == BACK_LINE) {
-					piece = Piece.create(WHITE, piece_list[i]);
+					piece = Piece.create(WHITE, type_list[i]);
 				} else if (lineChoice == FRONT_LINE) {
-					piece = Piece.create(WHITE, PAWN.getName());
+					piece = Piece.create(WHITE, PAWN);
 				}
 				rowPieces.add(piece);
 				numOfPawns++;
@@ -53,9 +39,9 @@ public class Row {
 			for(int i=0;i<8;i++) {
 				Piece piece = null;
 				if (lineChoice == BACK_LINE) {
-					piece = Piece.create(BLACK, piece_list[i]);
+					piece = Piece.create(BLACK, type_list[i]);
 				} else if (lineChoice == FRONT_LINE) {
-					piece = Piece.create(BLACK, PAWN.getName());
+					piece = Piece.create(BLACK, PAWN);
 				}
 				rowPieces.add(piece);
 				numOfPawns++;
