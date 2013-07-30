@@ -49,39 +49,45 @@ public class Piece {
 		this.symbol = getSymbol(this.color, name);
 	}
 	
+	private Piece(COLOR color, Type type) {
+		this.color = color.getColor();
+		this.name = type.getName();
+		this.symbol = getSymbol(this.color,this.name);
+	}
+	
 	private String getSymbol(String color, String name) {
 		String result;
-		if (name == NAME_PAWN) {
+		if (name == Type.PAWN.getName()) {
 			if (color == COLOR.WHITE.getColor()) {
 				result = SYMBOL_WHITE_PAWN;
 			} else {
 				result = SYMBOL_BLACK_PAWN;
 			}
-		} else if (name == NAME_KNIGHT) {
+		} else if (name == Type.KNIGHT.getName()) {
 			if (color == COLOR.WHITE.getColor()) {
 				result = SYMBOL_WHITE_KNIGHT;
 			} else {
 				result = SYMBOL_BLACK_KNIGHT;
 			}
-		} else if (name == NAME_ROOK) {
+		} else if (name == Type.ROOK.getName()) {
 			if (color == COLOR.WHITE.getColor()) {
 				result = SYMBOL_WHITE_ROOK;
 			} else {
 				result = SYMBOL_BLACK_ROOK;
 			}
-		} else if (name == NAME_BISHOP) {
+		} else if (name == Type.BISHOP.getName()) {
 			if (color == COLOR.WHITE.getColor()) {
 				result = SYMBOL_WHITE_BISHOP;
 			} else {
 				result = SYMBOL_BLACK_BISHOP;
 			}
-		} else if (name == NAME_QUEEN) {
+		} else if (name == Type.QUEEN.getName()) {
 			if (color == COLOR.WHITE.getColor()) {
 				result = SYMBOL_WHITE_QUEEN;
 			} else {
 				result = SYMBOL_BLACK_QUEEN;
 			}
-		} else if (name == NAME_KING) {
+		} else if (name == Type.KING.getName()) {
 			if (color == COLOR.WHITE.getColor()) {
 				result = SYMBOL_WHITE_KING;
 			} else {
@@ -93,6 +99,7 @@ public class Piece {
 		return result;
 	}
 	
+	// factory method
 	public static Piece create(COLOR color, String name) {
 		return new Piece(color, name);
 	}

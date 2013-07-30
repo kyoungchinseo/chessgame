@@ -38,7 +38,7 @@ public class Row {
 				if (lineChoice == BACK_LINE) {
 					piece = Piece.create(COLOR.WHITE, piece_list[i]);
 				} else if (lineChoice == FRONT_LINE) {
-					piece = Piece.create(COLOR.WHITE, NAME_PAWN);
+					piece = Piece.create(COLOR.WHITE, Type.PAWN.getName());
 				}
 				rowPieces.add(piece);
 				numOfPawns++;
@@ -49,7 +49,7 @@ public class Row {
 				if (lineChoice == BACK_LINE) {
 					piece = Piece.create(COLOR.BLACK, piece_list[i]);
 				} else if (lineChoice == FRONT_LINE) {
-					piece = Piece.create(COLOR.BLACK, NAME_PAWN);
+					piece = Piece.create(COLOR.BLACK, Type.PAWN.getName());
 				}
 				rowPieces.add(piece);
 				numOfPawns++;
