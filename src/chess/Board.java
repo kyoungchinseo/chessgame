@@ -3,7 +3,7 @@ package chess;
 import java.util.ArrayList;
 
 import static util.StringUtil.NEWLINE;
-
+import pieces.COLOR;
 import pieces.Row;
 import static pieces.Piece.COLOR_WHITE;
 import static pieces.Piece.COLOR_BLACK;
@@ -22,9 +22,9 @@ public class Board {
 	
 	private int numOfPawns = 0;
 	
-	public static final int FRONT_LINE = 1;
-	public static final int BACK_LINE = 2;
-	public static final int EMPTY_LINE = 0;
+	public static final int FRONT_LINE = 1; // eight pawns
+	public static final int BACK_LINE = 2;  // RNBQKBNR
+	public static final int EMPTY_LINE = 0; // empty
 	
 	Board () {
 		
@@ -34,19 +34,19 @@ public class Board {
 		for(int row=0;row<8;row++) {
 			switch(row) {
 			case 0:
-				chessBoard.add(new Row(COLOR_WHITE,BACK_LINE));
+				chessBoard.add(new Row(COLOR.WHITE,BACK_LINE));
 				break;
 			case 1:
-				chessBoard.add(new Row(COLOR_WHITE,FRONT_LINE));
+				chessBoard.add(new Row(COLOR.WHITE,FRONT_LINE));
 				break;
 			case 6:
-				chessBoard.add(new Row(COLOR_BLACK,FRONT_LINE));
+				chessBoard.add(new Row(COLOR.BLACK,FRONT_LINE));
 				break;
 			case 7:
-				chessBoard.add(new Row(COLOR_BLACK,BACK_LINE));
+				chessBoard.add(new Row(COLOR.BLACK,BACK_LINE));
 				break;
 			default:
-				chessBoard.add(new Row(COLOR_EMPTY,EMPTY_LINE));
+				chessBoard.add(new Row(COLOR.EMPTY,EMPTY_LINE));
 				break;
 			}
 			// calculate total number of pawns in chessboard

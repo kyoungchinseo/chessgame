@@ -21,24 +21,24 @@ public class Row {
 	
 	private int numOfPawns = 0;
 	
-	public Row(String color, int lineChoice) {
+	public Row(COLOR color, int lineChoice) {
 		
 		String [] piece_list = {NAME_ROOK,NAME_KNIGHT,NAME_BISHOP,NAME_QUEEN,
 							 	NAME_KING,NAME_BISHOP,NAME_KNIGHT,NAME_ROOK};
 		
 		
-		if (color == COLOR_EMPTY) {
+		if (color == COLOR.EMPTY) {
 			for(int i=0;i<8;i++) {
 				Piece piece = Piece.create(color,NAME_EMPTY);
 				rowPieces.add(piece);
 			}
-		} else if (color == COLOR_WHITE){			
+		} else if (color == COLOR.WHITE){			
 			for(int i=0;i<8;i++) {
 				Piece piece = null;
 				if (lineChoice == BACK_LINE) {
-					piece = Piece.create(COLOR_WHITE, piece_list[i]);
+					piece = Piece.create(COLOR.WHITE, piece_list[i]);
 				} else if (lineChoice == FRONT_LINE) {
-					piece = Piece.create(COLOR_WHITE, NAME_PAWN);
+					piece = Piece.create(COLOR.WHITE, NAME_PAWN);
 				}
 				rowPieces.add(piece);
 				numOfPawns++;
@@ -47,9 +47,9 @@ public class Row {
 			for(int i=0;i<8;i++) {
 				Piece piece = null;
 				if (lineChoice == BACK_LINE) {
-					piece = Piece.create(COLOR_BLACK, piece_list[i]);
+					piece = Piece.create(COLOR.BLACK, piece_list[i]);
 				} else if (lineChoice == FRONT_LINE) {
-					piece = Piece.create(COLOR_BLACK, NAME_PAWN);
+					piece = Piece.create(COLOR.BLACK, NAME_PAWN);
 				}
 				rowPieces.add(piece);
 				numOfPawns++;

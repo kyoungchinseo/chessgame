@@ -14,10 +14,11 @@ public class Piece {
 	private String name;
 	private String symbol; // "P" for black, "p" for white
 	
-	public static final String COLOR_WHITE = "white";
-	public static final String COLOR_BLACK = "black";
+	public static final String COLOR_WHITE = COLOR.WHITE.getColor();
+	public static final String COLOR_BLACK = COLOR.BLACK.getColor();
 	
-	public static final String COLOR_EMPTY = "";
+	public static final String COLOR_EMPTY = COLOR.EMPTY.getColor();
+	
 	public static final String SYMBOL_EMPTY = ".";
 	public static final String NAME_EMPTY = "empty";
 	
@@ -42,46 +43,46 @@ public class Piece {
 	public static final String NAME_KING = "king";
 
 
-	private Piece(String color, String name) {
-		this.color = color;
+	private Piece(COLOR color, String name) {
+		this.color = color.getColor();
 		this.name = name;
-		this.symbol = getSymbol(color, name);
+		this.symbol = getSymbol(this.color, name);
 	}
 	
 	private String getSymbol(String color, String name) {
 		String result;
 		if (name == NAME_PAWN) {
-			if (color == COLOR_WHITE) {
+			if (color == COLOR.WHITE.getColor()) {
 				result = SYMBOL_WHITE_PAWN;
 			} else {
 				result = SYMBOL_BLACK_PAWN;
 			}
 		} else if (name == NAME_KNIGHT) {
-			if (color == COLOR_WHITE) {
+			if (color == COLOR.WHITE.getColor()) {
 				result = SYMBOL_WHITE_KNIGHT;
 			} else {
 				result = SYMBOL_BLACK_KNIGHT;
 			}
 		} else if (name == NAME_ROOK) {
-			if (color == COLOR_WHITE) {
+			if (color == COLOR.WHITE.getColor()) {
 				result = SYMBOL_WHITE_ROOK;
 			} else {
 				result = SYMBOL_BLACK_ROOK;
 			}
 		} else if (name == NAME_BISHOP) {
-			if (color == COLOR_WHITE) {
+			if (color == COLOR.WHITE.getColor()) {
 				result = SYMBOL_WHITE_BISHOP;
 			} else {
 				result = SYMBOL_BLACK_BISHOP;
 			}
 		} else if (name == NAME_QUEEN) {
-			if (color == COLOR_WHITE) {
+			if (color == COLOR.WHITE.getColor()) {
 				result = SYMBOL_WHITE_QUEEN;
 			} else {
 				result = SYMBOL_BLACK_QUEEN;
 			}
 		} else if (name == NAME_KING) {
-			if (color == COLOR_WHITE) {
+			if (color == COLOR.WHITE.getColor()) {
 				result = SYMBOL_WHITE_KING;
 			} else {
 				result = SYMBOL_BLACK_KING;
@@ -92,7 +93,7 @@ public class Piece {
 		return result;
 	}
 	
-	public static Piece create(String color, String name) {
+	public static Piece create(COLOR color, String name) {
 		return new Piece(color, name);
 	}
 	
