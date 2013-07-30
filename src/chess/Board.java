@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 import static util.StringUtil.NEWLINE;
 import pieces.COLOR;
+import pieces.Piece;
 import pieces.Piece.Type;
 import pieces.Row;
 import static pieces.COLOR.*;
@@ -85,5 +86,12 @@ public class Board {
 			total += chessBoard.get(i).getNumOfPieces(c,t);
 		}
 		return total;
+	}
+
+	public Piece getPiece(String pos) {
+		int row = Character.getNumericValue(pos.charAt(1))-1; // start from 0
+		int col = Character.getNumericValue(pos.charAt(0))-10;  // 'a' is 10
+		
+		return chessBoard.get(row).getPiece(col);
 	}
 }

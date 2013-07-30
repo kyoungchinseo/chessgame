@@ -73,4 +73,8 @@ public class Row {
 		return rowNum;
 	}
 
+	public Piece getPiece(int index) {
+		return rowPieces.get(index);
+	}
+
 }

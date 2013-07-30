@@ -17,5 +17,10 @@ public class CharacterTest extends TestCase {
 		assertEquals(true, Character.isJavaIdentifierStart('a'));
 		assertEquals(false, Character.isJavaIdentifierStart('1'));
 	}
+	
+	public void testUtil() throws Exception {
+		assertEquals(3, Character.getNumericValue("a3".charAt(1)));
+		assertEquals(10, Character.getNumericValue("a3".charAt(0)));
+	}
 }
 
