@@ -77,4 +77,8 @@ public class Row {
 		return rowPieces.get(index);
 	}
 
+	public void addPiece(int index, Piece piece) {
+		rowPieces.set(index, piece);
+	}
+
 }

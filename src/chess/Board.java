@@ -54,6 +54,12 @@ public class Board {
 		}
 	}
 	
+	public void initializeWithEmpty() {
+		for(int row=0;row<8;row++) {
+			chessBoard.add(new Row(EMPTY,EMPTY_LINE));
+		}
+	}
+	
 	public String getRowSymbols(int index) {
 		return chessBoard.get(index).getRow();
 	}
@@ -94,4 +100,13 @@ public class Board {
 		
 		return chessBoard.get(row).getPiece(col);
 	}
+	
+	public void addPiece(String pos, Piece piece) {
+		int row = Character.getNumericValue(pos.charAt(1))-1; // start from 0
+		int col = Character.getNumericValue(pos.charAt(0))-10;  // 'a' is 10
+		
+		chessBoard.get(row).addPiece(col,piece);
+		
+	}
+
 }

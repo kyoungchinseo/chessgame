@@ -35,7 +35,7 @@ public class BoardTest extends TestCase {
 		
 	}	
 	
-	public void testGetMethods() throws Exception {
+	public void testNumPieces() throws Exception {
 		board.initialize();
 		assertEquals(32,board.pieceCount());
 		
@@ -50,5 +50,22 @@ public class BoardTest extends TestCase {
 		assertEquals(KING,board.getPiece("e1").getType());
 		
 	}
+	
+	public void testPosition() throws Exception {
+		board.initializeWithEmpty();
+		String blankRank = StringUtil.appendNewLine("........");
+		assertEquals(
+				blankRank + blankRank + blankRank + blankRank +
+				blankRank + blankRank + blankRank + blankRank,
+				board.print());
+		board.displayBoard();
+		
+		board.addPiece("b6", Piece.createKing(BLACK));
+		board.addPiece("b5", Piece.createRook(BLACK));
+		board.addPiece("c4", Piece.createKing(WHITE));
+		board.displayBoard();
+		
+	}
+	
 	
 }
