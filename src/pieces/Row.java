@@ -21,7 +21,7 @@ public class Row {
 		
 		if (color == EMPTY) {
 			for(int i=0;i<8;i++) {
-				Piece piece = Piece.create(color,NOPIECE);
+				Piece piece = Piece.create(color,NO_PIECE);
 				rowPieces.add(piece);
 			}
 		} else if (color == WHITE){			

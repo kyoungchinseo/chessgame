@@ -13,17 +13,7 @@ import static pieces.Piece.Type.*;
 public class Piece {
 
 	public enum Type {
-		NOPIECE("BLANK"),ROOK("ROOK"),KNIGHT("KNIGHT"),BISHOP("BISHOP"),QUEEN("QUEEN"),KING("KING"), PAWN("PAWN");
-		
-		String name;
-		
-		Type(String name) {
-			this.name = name;
-		}
-		
-		String getName() {
-			return name;
-		}
+		NO_PIECE,ROOK,KNIGHT,BISHOP,QUEEN,KING, PAWN;		
 	}
 
 	private COLOR color;
@@ -92,7 +82,7 @@ public class Piece {
 				result = Character.toUpperCase(BISHOP_REPRESENTATION);
 			}
 			break;
-		case NOPIECE:
+		case NO_PIECE:
 			result = EMPTY_REPRESENTATION;
 			break;
 		}
@@ -127,6 +117,10 @@ public class Piece {
 	
 	public static Piece createKing(COLOR color) {
 		return new Piece(color,KING);
+	}
+	
+	public static Piece noPiece() {
+		return new Piece(EMPTY,NO_PIECE);
 	}
 	
 	public String getLabel() {
