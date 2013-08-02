@@ -13,7 +13,17 @@ import static pieces.Piece.Type.*;
 public class Piece {
 
 	public enum Type {
-		NO_PIECE,ROOK,KNIGHT,BISHOP,QUEEN,KING, PAWN;		
+		NO_PIECE(0.0),ROOK(5.0),KNIGHT(2.5),BISHOP(3.0),QUEEN(9.0),KING(0.0), PAWN(1.0);
+		
+		private double point;
+		
+		Type(double point) {
+			this.point = point;
+		}
+		
+		public double getPoint() {
+			return point;
+		}		
 	}
 
 	private COLOR color;

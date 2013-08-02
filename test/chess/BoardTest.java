@@ -67,5 +67,21 @@ public class BoardTest extends TestCase {
 		
 	}
 	
-	
+	public void testStatusValue() throws Exception {
+		board.initializeWithEmpty();
+		board.displayBoard();
+		
+		board.addPiece("a7", Piece.createPawn(BLACK));
+		assertEquals(1.0, board.getStatusValue(BLACK));
+		board.addPiece("c7", Piece.createPawn(BLACK));
+		assertEquals(2.0, board.getStatusValue(BLACK));
+		board.addPiece("b6", Piece.createPawn(BLACK));
+		assertEquals(3.0, board.getStatusValue(BLACK));
+		board.addPiece("c8", Piece.createRook(BLACK));
+		assertEquals(8.0, board.getStatusValue(BLACK));
+		board.addPiece("d7", Piece.createBishop(BLACK));
+		assertEquals(11.0, board.getStatusValue(BLACK));
+		
+		board.displayBoard();
+	}
 }

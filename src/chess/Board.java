@@ -108,5 +108,18 @@ public class Board {
 		chessBoard.get(row).addPiece(col,piece);
 		
 	}
+	
+	public double getStatusValue(COLOR color) {
+		double statusValue = 0.0;
+		for(int i=0;i<chessBoard.size();i++) {
+			for(int j=0;j<8;j++) {
+				if (chessBoard.get(i).getPiece(j).getColor() == color) {
+					statusValue += chessBoard.get(i).getPiece(j).getType().getPoint();
+				}
+			}
+		}
+		// later check the duplicated columns
+		return statusValue;
+	}
 
 }
