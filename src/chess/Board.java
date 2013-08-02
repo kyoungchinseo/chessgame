@@ -8,6 +8,7 @@ import pieces.Piece;
 import pieces.Piece.Type;
 import pieces.Row;
 import static pieces.COLOR.*;
+import static pieces.Piece.Type.*;
 
 /**
  * 
@@ -118,7 +119,20 @@ public class Board {
 				}
 			}
 		}
-		// later check the duplicated columns
+		// check pawns on the same column
+		for(int i=0;i<8;i++) {
+			int numOfPawnsOnSameColumn = 0;
+			for(int j=0;j<8;j++) {
+				if (chessBoard.get(j).getPiece(i).getColor() == color) {
+					if (chessBoard.get(j).getPiece(i).getType() == PAWN) {
+						numOfPawnsOnSameColumn++;
+					}
+				}
+			}
+			if (numOfPawnsOnSameColumn > 1) {
+				statusValue = statusValue - (double)numOfPawnsOnSameColumn*0.5;
+			}
+		}
 		return statusValue;
 	}
 

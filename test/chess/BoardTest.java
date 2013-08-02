@@ -81,6 +81,26 @@ public class BoardTest extends TestCase {
 		assertEquals(8.0, board.getStatusValue(BLACK));
 		board.addPiece("d7", Piece.createBishop(BLACK));
 		assertEquals(11.0, board.getStatusValue(BLACK));
+		board.addPiece("e6",Piece.createQueen(BLACK));
+		assertEquals(20.0, board.getStatusValue(BLACK));
+
+
+		board.addPiece("e1", Piece.createRook(WHITE));
+		assertEquals(5.0, board.getStatusValue(WHITE));
+		board.addPiece("f1", Piece.createKing(WHITE));
+		assertEquals(5.0, board.getStatusValue(WHITE));
+		board.addPiece("f2", Piece.createPawn(WHITE));
+		assertEquals(6.0, board.getStatusValue(WHITE));
+		board.addPiece("g2", Piece.createPawn(WHITE));
+		assertEquals(7.0, board.getStatusValue(WHITE));
+		board.addPiece("f3", Piece.createPawn(WHITE));
+		assertEquals(7.0, board.getStatusValue(WHITE));
+		board.addPiece("h3", Piece.createPawn(WHITE));
+		assertEquals(8.0, board.getStatusValue(WHITE));
+		board.addPiece("f4", Piece.createKnight(WHITE));
+		assertEquals(10.5, board.getStatusValue(WHITE));
+		board.addPiece("g4", Piece.createQueen(WHITE));
+		assertEquals(19.5, board.getStatusValue(WHITE));
 		
 		board.displayBoard();
 	}
