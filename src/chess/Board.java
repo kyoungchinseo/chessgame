@@ -21,6 +21,8 @@ public class Board {
 	
 	private ArrayList<Row> chessBoard  = new ArrayList<Row>();
 	
+	private ArrayList<Position> positionList = new ArrayList<Position>();
+	
 	private int numOfPawns = 0;
 	
 	public static final int FRONT_LINE = 1; // eight pawns
@@ -96,29 +98,27 @@ public class Board {
 	}
 
 	public Piece getPiece(String pos) {
-		int row = Character.getNumericValue(pos.charAt(1))-1; // start from 0
-		int col = Character.getNumericValue(pos.charAt(0))-10;  // 'a' is 10
-		
-		return chessBoard.get(row).getPiece(col);
+		Position p= new Position(pos);
+		return chessBoard.get(p.getPostionRow()).getPiece(p.getPostionCol());
 	}
 	
 	public void addPiece(String pos, Piece piece) {
-		int row = Character.getNumericValue(pos.charAt(1))-1; // start from 0
-		int col = Character.getNumericValue(pos.charAt(0))-10;  // 'a' is 10
-		
-		chessBoard.get(row).addPiece(col,piece);
+		Position p= new Position(pos);
+		positionList.add(p);
+		chessBoard.get(p.getPostionRow()).addPiece(p.getPostionCol(),piece);
 		
 	}
 	
 	public double getStatusValue(COLOR color) {
 		double statusValue = 0.0;
-		for(int i=0;i<chessBoard.size();i++) {
-			for(int j=0;j<8;j++) {
-				if (chessBoard.get(i).getPiece(j).getColor() == color) {
-					statusValue += chessBoard.get(i).getPiece(j).getType().getPoint();
-				}
+		for(int i=0;i<positionList.size();i++) {
+			int row = positionList.get(i).getPostionRow();
+			int col = positionList.get(i).getPostionCol();
+			if (chessBoard.get(row).getPiece(col).getColor() == color) {
+				statusValue += chessBoard.get(row).getPiece(col).getType().getPoint();
 			}
 		}
+		
 		// check pawns on the same column
 		for(int i=0;i<8;i++) {
 			int numOfPawnsOnSameColumn = 0;
@@ -133,6 +133,7 @@ public class Board {
 				statusValue = statusValue - (double)numOfPawnsOnSameColumn*0.5;
 			}
 		}
+		
 		return statusValue;
 	}
 
