@@ -83,8 +83,9 @@ public class BoardTest extends TestCase {
 		assertEquals(11.0, board.getStatusValue(BLACK));
 		board.addPiece("e6",Piece.createQueen(BLACK));
 		assertEquals(20.0, board.getStatusValue(BLACK));
-
-
+		board.addPiece("b8", Piece.createKing(BLACK));
+		assertEquals(20.0, board.getStatusValue(BLACK));
+		
 		board.addPiece("e1", Piece.createRook(WHITE));
 		assertEquals(5.0, board.getStatusValue(WHITE));
 		board.addPiece("f1", Piece.createKing(WHITE));
@@ -103,5 +104,13 @@ public class BoardTest extends TestCase {
 		assertEquals(19.5, board.getStatusValue(WHITE));
 		
 		board.displayBoard();
+		
+		board.generatePieceList();
+		assertEquals("qrnppppk", board.getPieceList(WHITE));
+		assertEquals("QRBPPPK", board.getPieceList(BLACK));
+		board.printPieceList(WHITE);
+		board.printPieceList(BLACK);
+		
+		
 	}
 }

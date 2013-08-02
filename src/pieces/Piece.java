@@ -10,7 +10,7 @@ import static pieces.Piece.Type.*;
  * @author kyoungchin seo
  *
  */
-public class Piece {
+public class Piece implements Comparable<Piece> {
 
 	public enum Type {
 		NO_PIECE(0.0),ROOK(5.0),KNIGHT(2.5),BISHOP(3.0),QUEEN(9.0),KING(0.0), PAWN(1.0);
@@ -188,6 +188,12 @@ public class Piece {
 		} else if (!color.equals(other.color))
 			return false;
 		return true;
+	}
+
+	@Override
+	public int compareTo(Piece that) {
+		int compare = (int)(that.getType().getPoint() - this.getType().getPoint());
+		return compare;
 	}
 
 	
